@@ -18,7 +18,7 @@ export default function Navbar() {
     { name: 'Inicio', href: '#inicio' },
     { name: 'Nosotros', href: '#nosotros' },
     { name: 'Soluciones', href: '#soluciones' },
-    { name: 'Enfoque', href: '#enfoque' },
+    { name: 'Beneficios', href: '#beneficios' },
     { name: 'Contacto', href: '#contacto' },
   ];
 
@@ -32,8 +32,9 @@ export default function Navbar() {
       <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-2 group">
-          <div className={cn("font-bold text-2xl tracking-tighter", isScrolled ? "text-brand-deep-green" : "text-white")}>
-            CONSTRUCTORA <span className="text-brand-gold">ECOEDIF</span>
+          <div className="w-8 h-8 rounded-md bg-gradient-to-tr from-brand-blue to-brand-cyan flex items-center justify-center text-white font-bold text-xl">L</div>
+          <div className={cn("font-bold text-2xl tracking-tight", isScrolled ? "text-brand-dark-blue" : "text-white")}>
+            Logigho
           </div>
         </a>
 
@@ -45,8 +46,8 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   className={cn(
-                    'text-sm font-medium hover:text-brand-gold transition-colors',
-                    isScrolled ? 'text-brand-dark-gray' : 'text-white'
+                    'text-sm font-medium hover:text-brand-blue transition-colors',
+                    isScrolled ? 'text-brand-gray' : 'text-gray-200 hover:text-white'
                   )}
                 >
                   {link.name}
@@ -57,19 +58,19 @@ export default function Navbar() {
           <a
             href="#contacto"
             className={cn(
-              "px-6 py-2.5 rounded-sm font-medium transition-colors text-sm",
+              "px-6 py-2.5 rounded-full font-medium transition-colors text-sm shadow-lg",
               isScrolled 
-                ? "bg-brand-deep-green text-white hover:bg-brand-medium-green" 
-                : "bg-white text-brand-deep-green hover:bg-brand-sand"
+                ? "bg-brand-blue text-white hover:bg-brand-dark-blue" 
+                : "bg-white text-brand-blue hover:bg-brand-light-gray"
             )}
           >
-            Hablar con nosotros
+            Solicitar Demo
           </a>
         </nav>
 
         {/* Mobile Toggle */}
         <button
-          className={cn("md:hidden", isScrolled ? "text-brand-dark-gray" : "text-white")}
+          className={cn("md:hidden", isScrolled ? "text-brand-gray" : "text-white")}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -83,7 +84,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-brand-dark-gray text-lg font-medium py-2 border-b border-gray-100"
+              className="text-brand-gray text-lg font-medium py-2 border-b border-gray-100"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}
@@ -92,9 +93,9 @@ export default function Navbar() {
           <a
             href="#contacto"
             onClick={() => setMobileMenuOpen(false)}
-            className="mt-4 bg-brand-deep-green text-white text-center py-3 rounded-sm font-medium"
+            className="mt-4 bg-brand-blue text-white text-center py-3 rounded-full font-medium shadow-md"
           >
-            Hablar con nosotros
+            Solicitar Demo
           </a>
         </div>
       )}
